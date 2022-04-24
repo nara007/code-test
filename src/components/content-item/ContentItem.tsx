@@ -1,14 +1,9 @@
 import Grid from '@mui/material/Grid';
 import styled from 'styled-components';
 import Home from '@mui/icons-material/Home';
+import { BowerResult } from '../../store/slices/bowerSearch';
 
-export type ItemProps = {
-    name: string,
-    link: string,
-    description: string,
-    owner: string,
-    stars: number,
-};
+export type ItemProps = Pick<BowerResult, 'name' | 'homepage' | 'description' | 'stars'> & { owner: string };
 
 const NameContainer = styled.span`
     margin-top: 2rem;
@@ -94,21 +89,21 @@ const PrimaryInfoContainer = styled.div`
 `;
 
 function ContentItem({
-    name, link, description, owner, stars,
+    name, homepage, description, owner, stars,
 }: ItemProps): JSX.Element {
     return (
         <Grid container sx={{ borderTop: '1px solid #F5F5F5' }}>
-            <Grid sm={12} md={8}>
+            <Grid item sm={12} md={8}>
                 <PrimaryInfoContainer>
                     <NameContainer>{name}</NameContainer>
                     <LinkContainer>
                         <Home sx={{ color: 'black' }} />
-                        {link}
+                        {homepage}
                     </LinkContainer>
                     <DescriptionContainer>{description}</DescriptionContainer>
                 </PrimaryInfoContainer>
             </Grid>
-            <Grid sm={12} md={4} container>
+            <Grid item sm={12} md={4} container>
                 <InfoContainer>
                     <span>{owner}</span>
                     <span>{stars}</span>

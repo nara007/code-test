@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Box from '@mui/material/Box';
 
 const Container = styled.div`
     margin-top: 3rem;
@@ -15,7 +14,7 @@ function Footer(): JSX.Element {
             <p>Help improve these docs. Open an issue or pull request.</p>
             <br />
             <p>
-                <Box sx={{ color: '#543729' }}>Our supporters:</Box>
+                <span style={{ color: '#543729' }}>Our supporters:</span>
                 <span>{footStr}</span>
             </p>
         </Container>

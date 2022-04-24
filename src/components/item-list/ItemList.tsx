@@ -42,10 +42,10 @@ function ItemList({ items }: Props) {
     return (
         <Container>
             <Grid container sx={{ color: '#008ec4', fontWeight: 'bold' }}>
-                <Grid sm={12} md={8}>
+                <Grid item sm={12} md={8}>
                     <NameContainer>Name</NameContainer>
                 </Grid>
-                <Grid sm={0} md={4} container>
+                <Grid item sm={0} md={4} container>
                     <InfoContainer>
                         <span>Owner</span>
                         <span>Starts</span>
@@ -54,8 +54,9 @@ function ItemList({ items }: Props) {
             </Grid>
             {items.map((item) => (
                 <ContentItem
+                    key={`${item.name}-${item.homepage}`}
                     name={item.name}
-                    link={item.link}
+                    homepage={item.homepage}
                     description={item.description}
                     owner={item.owner}
                     stars={item.stars}

@@ -1,7 +1,8 @@
 import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-// import { ThemeProvider } from '@mui/material/styles';
 import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import './App.css';
 import MainPage from './views/MainPage';
 import theme from './style/Theme';
@@ -9,8 +10,10 @@ import theme from './style/Theme';
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <MainPage />
+            <Provider store={store}>
+                <CssBaseline />
+                <MainPage />
+            </Provider>
         </ThemeProvider>
     );
 }
