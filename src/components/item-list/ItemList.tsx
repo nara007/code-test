@@ -48,7 +48,7 @@ function ItemList({ items }: Props) {
                 <Grid item sm={0} md={4} container>
                     <InfoContainer>
                         <span>Owner</span>
-                        <span>Starts</span>
+                        <span>Stars</span>
                     </InfoContainer>
                 </Grid>
             </Grid>
