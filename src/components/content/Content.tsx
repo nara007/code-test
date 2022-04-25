@@ -48,7 +48,7 @@ function Content(): JSX.Element {
     const pageCount = data ? Math.ceil(data.length / PAGE_SIZE) : 1;
     return (
         <>
-            <SearchFilter size='small' type='search' value={searchValue} onChange={onValueChange} />
+            <SearchFilter label='filter' size='small' type='search' value={searchValue} onChange={onValueChange} />
             <ListContainer>
                 {isLoading ? 'is loading...' : <ItemList items={items} />}
             </ListContainer>
