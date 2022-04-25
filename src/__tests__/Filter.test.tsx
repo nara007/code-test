@@ -5,7 +5,7 @@ import App from '../App';
 describe('Filter Test', () => {
     it('should render filtered results', async () => {
         render(<App />);
-        userEvent.type(screen.getByLabelText('filter'), 'react');
+        userEvent.type(screen.getByLabelText('Search'), 'react');
         const bootstrapResult = await screen.findAllByText(/react/i, {}, { timeout: 2000 });
         expect(bootstrapResult.length).toBeGreaterThanOrEqual(5);
     });

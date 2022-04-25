@@ -15,8 +15,8 @@ const bowerSearchApi = createApi({
     reducerPath: 'bowerSearch',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://libraries.io/api/bower-search' }),
     endpoints: (builder) => ({
-        getLibrariesByName: builder.query<BowerResult[], string>({
-            query: (name) => `?q=${name}`,
+        getLibrariesByName: builder.query<BowerResult[], {name: string, sortParam: string}>({
+            query: ({ name, sortParam }) => `?q=${name}&&sort=${sortParam}`,
         }),
     }),
 });
