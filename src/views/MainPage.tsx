@@ -36,6 +36,10 @@ const ContentContainer = styled.div`
     };  
 `;
 
+/**
+ * Main page view
+ * @returns {JSX.Element}
+ */
 function MainPage(): JSX.Element {
     return (
         <div>

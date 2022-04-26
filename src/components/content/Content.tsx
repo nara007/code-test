@@ -31,11 +31,19 @@ const Pagination = styled(MuiPagination)`
     }
 `;
 
+/**
+ * Content component
+ * @returns {JSX.Element}
+ */
 function Content(): JSX.Element {
     const [searchValue, setSearchValue] = useState('');
+    // frontend pagination
     const [page, setPage] = useState(1);
+    // sort by stars
     const [sortParam, setSortParam] = useState('');
+    // custom hook for debounce
     const [debouncedValue] = useDebounce(searchValue, DEBOUNCE_TIME);
+    // api slice
     const { data, error, isLoading } = useGetLibrariesByNameQuery(
         { name: debouncedValue, sortParam },
     );
@@ -56,6 +64,7 @@ function Content(): JSX.Element {
         }
     };
 
+    // simple frontend pagination
     const items = data ? data.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE).map((item) => ({
         name: item.name,
         description: item.description,

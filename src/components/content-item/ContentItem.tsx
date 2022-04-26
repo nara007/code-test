@@ -88,6 +88,15 @@ const PrimaryInfoContainer = styled.div`
     }
 `;
 
+/**
+ * Item component in module list
+ * @param {string} name
+ * @param {string} homepage
+ * @param {string} description
+ * @param {string} owner
+ * @param {number} stars
+ * @returns {JSX.Element}
+ */
 function ContentItem({
     name, homepage, description, owner, stars,
 }: ItemProps): JSX.Element {

@@ -41,6 +41,10 @@ const sidebarItems = [{ name: 'Home', icon: Home },
     { name: 'Tools', icon: Tools },
     { name: 'About', icon: About }];
 
+/**
+ * Sidebar component
+ * @returns {JSX.Element}
+ */
 function Sidebar(): JSX.Element {
     return (
         <ul>

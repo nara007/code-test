@@ -90,6 +90,10 @@ const LogoContainer = styled.div`
         justify-content: center;
     }
 `;
+/**
+ * Header component
+ * @returns {JSX.Element}
+ */
 function Header(): JSX.Element {
     return (
         <Container>

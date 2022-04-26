@@ -38,6 +38,11 @@ const Container = styled.div`
     box-shadow: 0 0 1px #ccc;
 `;
 
+/**
+ * Item list component
+ * @param {Array} items
+ * @returns {JSX.Element}
+ */
 function ItemList({ items }: Props) {
     return (
         <Container>
