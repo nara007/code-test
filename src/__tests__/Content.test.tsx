@@ -4,10 +4,12 @@ import App from '../App';
 describe('Content Test', () => {
     it('should render content', async () => {
         render(<App />);
-        const bootstrap = await screen.findAllByText(/bootstrap/i);
-        const fontAwesome = await screen.findAllByText(/font-awesome/i);
-        expect(bootstrap).not.toEqual([]);
-        expect(fontAwesome).not.toEqual([]);
+        const name = await screen.findByText(/^Name$/);
+        const owner = await screen.findByText(/^Owner$/);
+        const stars = await screen.findByText(/^Stars$/);
+        expect(name).toBeInTheDocument();
+        expect(owner).toBeInTheDocument();
+        expect(stars).toBeInTheDocument();
     });
 });
 

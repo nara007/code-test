@@ -106,7 +106,7 @@ function ContentItem({
             <Grid item sm={12} md={4} container>
                 <InfoContainer>
                     <span>{owner}</span>
-                    <span>{stars}</span>
+                    <span aria-label='stars'>{stars}</span>
                 </InfoContainer>
                 <SmallInfoContainer>
                     <OwnerStarContainer>{`Owner: ${owner}`}</OwnerStarContainer>

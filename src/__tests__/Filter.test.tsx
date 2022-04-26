@@ -5,8 +5,8 @@ import App from '../App';
 describe('Filter Test', () => {
     it('should render filtered results', async () => {
         render(<App />);
-        userEvent.type(screen.getByLabelText('Search'), 'react');
-        const bootstrapResult = await screen.findAllByText(/react/i, {}, { timeout: 2000 });
+        userEvent.type(screen.getByTestId('search'), 'react');
+        const bootstrapResult = await screen.findAllByText(/react/i, {}, { timeout: 3000 });
         expect(bootstrapResult.length).toBeGreaterThanOrEqual(5);
     });
 });

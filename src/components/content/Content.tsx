@@ -67,7 +67,15 @@ function Content(): JSX.Element {
     return (
         <>
             <FilterContainer>
-                <SearchFilter label='Search' size='small' type='search' value={searchValue} onChange={onValueChange} />
+                <SearchFilter
+                    inputProps={{
+                        'data-testid': 'search',
+                    }}
+                    size='small'
+                    type='search'
+                    value={searchValue}
+                    onChange={onValueChange}
+                />
                 <IconButton onClick={onSort} sx={{ width: '2.5rem', height: '2.5rem' }} aria-label='sort-by-stars'>
                     <Sort />
                 </IconButton>
